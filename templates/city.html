@@ -1,0 +1,39 @@
+{% include 'header.html' %}
+
+
+
+
+  <section class="py-5 text-center container">
+    <div class="row py-lg-5">
+      <div class="col-lg-6 col-md-8 mx-auto">
+        <h1 class="fw-light">United Kingdom</h1>
+        <p class="lead text-body-secondary">The best work and study-friendly cafes, restaurants, libraries, and hotel lobbies in the UK. Find venues with free and reliable Wi-Fi hotspots, ample power sockets, and comfy seating areas.</p>
+
+      </div>
+    </div>
+  </section>
+{% for cafe in cafes %}
+<div class="container ">
+  <div class="row row-cols-3">
+    <div class="col">
+          <div class="card shadow-sm">
+            <img class="bd-placeholder-img card-img-top" width="100%" height="225" src="{{cafe.img_url}}">
+            <div class="card-body">
+              <p class="card-text">{{cafe.name}}</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <button type="button" class="btn btn-sm btn-outline-secondary">{{cafe.location}}</button>
+
+                </div>
+                <small class="text-body-secondary"><a class="btn btn-sm btn-outline-secondary" href="{{url_for('cafe', index=cafe.id)}}">More Info</a> </small>
+              </div>
+            </div>
+          </div>
+    </div>
+  </div>
+</div>
+   {% endfor %}
+
+
+
+{% include 'footer.html' %}

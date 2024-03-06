@@ -1,0 +1,14 @@
+{% include 'header.html'%}
+
+<div class="text-center">
+    <div class="container">
+       <h1>All Cities</h1>
+        <section>
+            <h2>Ghana</h2>
+            {% for city in nation %}
+            <a class="btn btn-default btn-lg" href="{{url_for('city', index=city.id)}}">{{city.name}}</a>
+            {% endfor %}
+        </section>
+    </div>
+</div>
+{% include 'footer.html'%}
